@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Prediction Result</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card result-card">
+
+        <h1>Prediction Result</h1>
+
+        <div class="info-box">
+
+            <h3>Applicant Details</h3>
+
+            <p>
+                <strong>Applicant Name :</strong>
+                {{ applicant_name }}
+            </p>
+
+            <p>
+                <strong>Prediction :</strong>
+                {{ prediction }}
+            </p>
+
+            <p>
+                <strong>Confidence :</strong>
+                {{ confidence }} %
+            </p>
+
+            <p>
+                <strong>Prediction Date :</strong>
+                {{ prediction_date }}
+            </p>
+
+            <p>
+                <strong>Prediction Time :</strong>
+                {{ prediction_time }}
+            </p>
+
+        </div>
+
+        {% if prediction == "Good Customer" %}
+
+            <div class="result success">
+
+                <div class="icon">
+                    {{ icon }}
+                </div>
+
+                <h2>{{ approval }}</h2>
+
+                <p>
+
+                    Congratulations!
+
+                    <strong>{{ applicant_name }}</strong>
+
+                    is predicted to be a
+
+                    <strong>Good Customer</strong>
+
+                    with
+
+                    <strong>{{ confidence }}%</strong>
+
+                    confidence.
+
+                </p>
+
+            </div>
+
+        {% elif prediction == "Bad Customer" %}
+
+            <div class="result danger">
+
+                <div class="icon">
+                    {{ icon }}
+                </div>
+
+                <h2>{{ approval }}</h2>
+
+                <p>
+
+                    The applicant
+
+                    <strong>{{ applicant_name }}</strong>
+
+                    is predicted to be a
+
+                    <strong>Bad Customer</strong>
+
+                    with
+
+                    <strong>{{ confidence }}%</strong>
+
+                    confidence.
+
+                </p>
+
+            </div>
+
+        {% else %}
+
+            <div class="result warning">
+
+                <h3>{{ prediction }}</h3>
+
+            </div>
+
+        {% endif %}
+
+        <a href="/" class="btn">
+
+            Predict Another Applicant
+
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

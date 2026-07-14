@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>📊 Credit Card Approval Dashboard</h1>
+
+        <p class="subtitle">
+
+            Model Performance & Prediction Analytics
+
+        </p>
+
+        <div class="dashboard-grid">
+
+            <div class="dashboard-card">
+
+                <h2>{{ total }}</h2>
+
+                <p>Total Predictions</p>
+
+            </div>
+
+            <div class="dashboard-card success-card">
+
+                <h2>{{ approved }}</h2>
+
+                <p>Approved Customers</p>
+
+            </div>
+
+            <div class="dashboard-card danger-card">
+
+                <h2>{{ rejected }}</h2>
+
+                <p>Rejected Customers</p>
+
+            </div>
+
+            <div class="dashboard-card info-card">
+
+                <h2>{{ approval_rate }}%</h2>
+
+                <p>Approval Rate</p>
+
+            </div>
+
+        </div>
+
+        <br>
+
+        <div class="info-box">
+
+            <h3>Model Analytics</h3>
+
+            <p>
+
+                <strong>Average Prediction Confidence :</strong>
+
+                {{ average_confidence }} %
+
+            </p>
+
+            <p>
+
+                <strong>Total Records Processed :</strong>
+
+                {{ total }}
+
+            </p>
+
+        </div>
+
+        <br>
+
+        <div style="text-align:center;">
+
+            <a href="/" class="btn">
+
+                New Prediction
+
+            </a>
+
+            &nbsp;&nbsp;
+
+            <a href="/history" class="btn">
+
+                Prediction History
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
