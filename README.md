@@ -130,3 +130,6 @@ SmartBridge AI & ML Internship Project
 ## 📜 License
 
 This project is developed for educational purposes.
+
+## Demo Video Link
+https://drive.google.com/file/d/1C4Q04NP20W10yb28lhMobz1InhTyWu4i/view?usp=drivesdk
